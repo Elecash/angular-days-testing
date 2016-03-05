@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>AngularJS Days Testing Workshop</title>
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        ui-typeahead .form.dropdown > input {
+            display: block;
+        }
+    </style>
 </head>
 <body ng-app="app">
 
-    <div ng-view></div>
+    <ui-view></ui-view>
 
     <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
     <script src="node_modules/angular-route/angular-route.min.js" type="text/javascript"></script>
@@ -15,5 +23,7 @@
     <script src="node_modules/angular-strap/dist/angular-strap.tpl.min.js" type="text/javascript"></script>
 
     <script src="scripts/app.js" type="text/javascript"></script>
+    <script src="scripts/views/view.js" type="text/javascript"></script>
+    <script src="scripts/comps/typeahead.js" type="text/javascript"></script>
 </body>
 </html>

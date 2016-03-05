@@ -1,0 +1,8 @@
+<div class="form dropdown" ng-class="{open: ctrl.isOpen}">
+    <input type="text" class="form-control" ng-model="ctrl.term" ng-model-options="ctrl.modelOptions" ng-change="ctrl.onSearch()" ng-keydown="ctrl.onKeyDown($event)" ng-click="ctrl.isOpen = !ctrl.isOpen;">
+    <ul class="form dropdown-menu">
+        <li ng-repeat="item in ctrl.safDataProvider | filter:ctrl.term">
+            <a ng-click="ctrl.selectOption(item)" ng-selected="ctrl.currentItem.value === item.value">{{ item.label }}</a>
+        </li>
+    </ul>
+</div>
