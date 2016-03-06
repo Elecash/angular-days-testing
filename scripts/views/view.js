@@ -19,9 +19,11 @@ angular.module('app')
             this.provider = [];
 
             this.onChange = function($term) {
-                GithubService.getUsers($term).then(
-                    this.onGetUsers.bind(this)
-                );
+                if ($term.length) {
+                    GithubService.getUsers($term).then(
+                        this.onGetUsers.bind(this)
+                    );
+                }
             };
 
             this.onGetUsers = function($response) {
