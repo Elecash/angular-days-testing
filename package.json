@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -c-1 -o -p 9875 ./",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start tests/conf/karma.conf.js"
   },
   "repository": {
     "type": "git",
