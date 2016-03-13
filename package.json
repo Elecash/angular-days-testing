@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "http-server -c-1 -o -p 9875 ./",
+    "coverage": "http-server -c-1 -o -p 9876 ./coverage",
     "test": "karma start tests/conf/karma.conf.js"
   },
   "repository": {
@@ -26,11 +27,13 @@
     "bootstrap": "3.3.6"
   },
   "devDependencies": {
+    "angular-mocks": "1.5.0",
     "http-server": "0.9.0",
     "jasmine-core": "2.4.1",
     "karma": "0.13.21",
     "karma-coverage": "0.5.4",
     "karma-jasmine": "0.3.7",
+    "karma-ng-html2js-preprocessor": "0.2.1",
     "karma-phantomjs-launcher": "1.0.0",
     "karma-spec-reporter": "0.0.24",
     "phantomjs-prebuilt": "2.1.4"

@@ -12,10 +12,12 @@ module.exports = function (config) {
             'node_modules/angular-route/angular-route.min.js',
             'node_modules/angular-resource/angular-resource.min.js',
             'node_modules/angular-animate/angular-animate.min.js',
+            'node_modules/angular-mocks/angular-mocks.js',
             'node_modules/angular-strap/dist/angular-strap.min.js',
             'node_modules/angular-strap/dist/angular-strap.tpl.min.js',
 
             'scripts/**/*.js',
+            'scripts/**/*.html',
 
             'tests/unit/**/*.js'
         ],
@@ -46,7 +48,8 @@ module.exports = function (config) {
         plugins: [
             'karma-jasmine',
             'karma-coverage',
-            'karma-phantomjs-launcher'
+            'karma-phantomjs-launcher',
+            'karma-ng-html2js-preprocessor'
         ],
 
         // Coverage reporter generates the coverage
@@ -55,13 +58,18 @@ module.exports = function (config) {
         // Source files that you wanna generate coverage for.
         // Do not include tests or libraries (these files will be instrumented by Istanbul)
         preprocessors: {
-            'scripts/**/*.js': ['coverage']
+            'scripts/**/*.js': ['coverage'],
+            'scripts/**/*.html': ['ng-html2js']
+        },
+
+        // Add templates to a module called 'app-templates'
+        ngHtml2JsPreprocessor: {
+            moduleName: 'templates'
         },
 
         coverageReporter: {
             reporters:[
-                {type: 'html', dir:'coverage/'},
-                {type: 'cobertura', dir:'coverage/', file: 'coverage.xml'}
+                {type: 'html', subdir: '.', dir:'coverage/'}
             ]
         },
 
