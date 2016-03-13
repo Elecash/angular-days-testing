@@ -37,10 +37,19 @@ describe('View', function() {
 
     it('Should select first result on press enter', function() {
         var search = element(by.model('ctrl.term'));
-        var results = element.all(by.repeater('item in ctrl.uiDataProvider'));
         search.sendKeys('elecash');
         search.sendKeys(protractor.Key.ENTER);
 
         expect(search.getAttribute('value')).toBe('Elecash');
+    });
+
+    it('Testing custom locator', function() {
+        var search = element(by.model('ctrl.term'));
+        search.sendKeys('angular');
+        search.click();
+
+        element(by.cssWithContent({css: 'a', content: 'AngularClass'})).click();
+
+        expect(search.getAttribute('value')).toBe('AngularClass');
     });
 });
