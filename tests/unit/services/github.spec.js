@@ -1,4 +1,4 @@
-describe('ui-view component', function() {
+describe('Github service', function() {
     var $httpBackend;
     var GithubService;
 
