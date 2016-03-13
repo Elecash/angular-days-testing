@@ -9,7 +9,7 @@
     "test": "karma start tests/conf/karma.conf.js",
     "e2e": "parallelshell 'npm run e2e-server' 'npm run e2e-tests'",
     "e2e-tests": "protractor tests/conf/e2e.conf.js",
-    "e2e-server": "http-server -c-1 -p 9875 ./"
+    "e2e-server": "http-server -c-1 -s -p 9877 ./"
   },
   "repository": {
     "type": "git",
