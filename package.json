@@ -4,12 +4,13 @@
   "description": "AngularJS Days Testing Workshop",
   "main": "index.js",
   "scripts": {
-    "start": "http-server -c-1 -o -p 9875 ./",
-    "coverage": "http-server -c-1 -o -p 9876 ./coverage",
+    "start": "http-server -c-1 -o -s -p 9875 ./",
+    "coverage": "http-server -c-1 -o -s -p 9876 ./coverage",
     "test": "karma start tests/conf/karma.conf.js",
-    "e2e": "parallelshell 'npm run e2e-server' 'npm run e2e-tests'",
+    "e2e": "parallelshell 'npm run e2e-server' 'npm run watch:e2e'",
     "e2e-tests": "protractor tests/conf/e2e.conf.js",
-    "e2e-server": "http-server -c-1 -s -p 9877 ./"
+    "e2e-server": "http-server -c-1 -s -p 9877 ./",
+    "watch:e2e": "watch 'npm run e2e-tests' tests/e2e"
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,7 @@
     "karma-phantomjs-launcher": "1.0.0",
     "karma-spec-reporter": "0.0.24",
     "parallelshell": "2.0.0",
-    "phantomjs-prebuilt": "2.1.4"
+    "phantomjs-prebuilt": "2.1.4",
+    "watch": "0.17.1"
   }
 }

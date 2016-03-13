@@ -7,6 +7,18 @@ describe('View', function() {
         expect(element(by.css('ui-view')).isPresent()).toBeTruthy();
     });
 
+    it('Should open and close dropdown on click search field', function() {
+        var search = element(by.model('ctrl.term'));
+        var menu = element(by.css('.form.dropdown-menu'));
+        search.click();
+
+        expect(menu.isDisplayed()).toBeTruthy();
+
+        search.click();
+
+        expect(menu.isDisplayed()).toBeFalsy();
+    });
+
     it('Should show an empty dropdown if search field is empty', function() {
         var search = element(by.model('ctrl.term'));
         var results = element.all(by.repeater('item in ctrl.uiDataProvider'));
@@ -23,7 +35,7 @@ describe('View', function() {
         expect(results.count()).toBeGreaterThan(0);
     });
 
-    it('Should select firts result on press enter', function() {
+    it('Should select first result on press enter', function() {
         var search = element(by.model('ctrl.term'));
         var results = element.all(by.repeater('item in ctrl.uiDataProvider'));
         search.sendKeys('elecash');

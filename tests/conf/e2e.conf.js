@@ -1,3 +1,4 @@
+// Reference: https://github.com/angular/protractor/blob/master/docs/referenceConf.js
 exports.config = {
     framework: 'jasmine2',
     specs: ['../e2e/**/*.e2e.js'],
